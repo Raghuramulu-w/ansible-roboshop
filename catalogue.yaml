@@ -3,7 +3,9 @@
   become: yes
   tasks:
    - name: enable nodejs
-     ansible.builtin.shell: dnf module disable nodejs,dnf module enable nodejs:18 
+     ansible.builtin.shell: 
+      dnf module disable nodejs
+      dnf module enable nodejs:18 
    - name: install catalogue
      ansible.builtin.package:
       name: nodejs
