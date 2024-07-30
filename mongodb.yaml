@@ -1,5 +1,6 @@
 - name: mongodb install
   hosts: mongodb
+  become: yes
   tasks:
    - name: copying mongo repo
      ansible.builtin.copy:
@@ -9,4 +10,3 @@
      ansible.builtin.package:
       name: mongodb-org
       state: present
-      
