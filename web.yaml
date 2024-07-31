@@ -11,5 +11,10 @@
       name: nginx
       enabled: yes
       state: started
+   - name: removing content
+     ansible.builtin.file:
+      path: /usr/share/nginx/html/*
+      state: absent
+
 
    
