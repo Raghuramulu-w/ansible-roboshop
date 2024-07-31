@@ -31,8 +31,8 @@
    - name: copy catalogueservice
      ansible.builtin.copy:
       src: catalogue.service
-      dest: /etc/systemd/system/catalogue.service
-   - name: sytem demon
+      dest: /etc/catalogue.service
+   - name: sytemdemon
      ansible.builtin.systemd_services:
       demon-reload: true
 
