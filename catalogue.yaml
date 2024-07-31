@@ -11,4 +11,4 @@
    - name: user add
      ansible.builtin.user:
       name: roboshop
-      state: present
+      
