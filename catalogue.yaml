@@ -25,7 +25,7 @@
       dest: /app
       remote_src: yes
    - name: npm install
-     ansible.builtin.command:  install npm
+     ansible.builtin.command: npm install 
       args:
        chdir: /app
 
