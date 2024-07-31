@@ -32,7 +32,7 @@
      ansible.builtin.copy:
       src: catalogue.service
       dest: /etc/catalogue.service
-   - name: sytemdemon
+   - name: loading
      ansible.builtin.systemd_services:
       demon-reload: true
 
