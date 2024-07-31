@@ -19,3 +19,9 @@
      ansible.builtin.get_url:
       url:  https://roboshop-builds.s3.amazonaws.com/catalogue.zip
       dest: /tmp   
+   - name: unzip the application
+     ansible.builtin.unarchive:
+      src: /tmp/catalogue.zip
+      dest: /app
+      remote_src:yes
+      
