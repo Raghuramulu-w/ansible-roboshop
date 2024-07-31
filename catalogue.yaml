@@ -28,5 +28,13 @@
      ansible.builtin.command: npm install 
      args:
        chdir: /app
-
+   - name: copy mongo repo
+     ansible.builtin.copy:
+      src: mongo.repo
+      dest: /etc/yum.repos.d/mongo.repo
+   - name: install mongorepo
+     ansible.builtin.package:
+      name: mongodb-org-shell 
+      state: present
+  
 
