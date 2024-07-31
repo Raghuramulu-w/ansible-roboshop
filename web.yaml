@@ -25,8 +25,8 @@
   #     dest: /usr/share/nginx/html
    - name: unzip a file
      ansible.builtin.unarchive:
-      src: /tmp/web.zip
-      dest: /usr/share/nginx/html
+      src: /usr/share/nginx/html
+      dest: /tmp/web.zip
       remote_src: yes
       
 
