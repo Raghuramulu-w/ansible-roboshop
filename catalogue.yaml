@@ -24,9 +24,9 @@
       src: /tmp/catalogue.zip
       dest: /app
       remote_src: yes
-   - name: npm install
+   - name: npm installing
      ansible.builtin.command: npm install 
       args:
-       chdir: app/
+       chdir: /app
 
 
