@@ -19,7 +19,7 @@
      ansible.builtin.get_url:
        url: https://roboshop-builds.s3.amazonaws.com/web.zip
        dest: /tmp
-   - name: Create a directory if it does not exist
+   - name: Create a directory 
      ansible.builtin.file:
       path: /usr/share/nginx/html/
       state: directory
@@ -27,13 +27,7 @@
      ansible.builtin.unarchive:
       src: /tmp/web.zip
       dest: /usr/share/nginx/html/
-      remote_src: yes
-  #  - name: create a reverse proxy
-  #   #  name: copy catalogueservice
-  #    ansible.builtin.copy:
-  #     src: roboshop.conf
-  #     dest: /etc/nginx/default.d/roboshop.conf 
-     
+      remote_src: yes  
    - name: restart nginx
      ansible.builtin.service:
       name: nginx
