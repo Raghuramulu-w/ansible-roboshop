@@ -50,5 +50,5 @@
      ansible.builtin.debug:
       msg:" count is {{product_count}}"
    - name: load catalogue
-     ansible.builtin.command: mongo --host MONGODB-SERVER-IPADDRESS < /app/schema/catalogue.js
+     ansible.builtin.command: mongo --host mongodb.daws76s.fun < /app/schema/catalogue.js
       
