@@ -11,4 +11,11 @@
    - name: user add
      ansible.builtin.user:
       name: roboshop
-      
+   - name: make directory
+     ansible.builtin.file:
+      path: /app
+      state: directory
+   - name: download application
+     ansible.builtin.get_url:
+      url: curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip
+      dest: /app   
