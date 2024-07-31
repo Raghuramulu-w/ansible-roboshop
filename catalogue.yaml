@@ -43,5 +43,9 @@
      ansible.builtin.package:
       name: mongodb-org-shell 
       state: present
-  
-
+   - name: checking connection and counting catagiries products
+     ansible.builtin.command: mongo --host mongodb.daws76s.fun --quiet --eval 'db=db.getSiblingDB("catalogue");db.products.count()'
+      register: product_count
+   - name: printing count
+     ansible.builtin.debug:
+      msg:" count is {{product_count}}"
