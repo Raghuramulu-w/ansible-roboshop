@@ -51,7 +51,7 @@
       msg: " count is {{product_count}}"
    - name: load catalogue
      ansible.builtin.command: mongo --host mongodb.daws76s.fun < /app/schema/catalogue.js
-    name: restart and enable catalogue
+   - name: restart and enable catalogue
     ansible.builtin.service:
      name: catalogue
      state: restarted
