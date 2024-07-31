@@ -28,6 +28,14 @@
      ansible.builtin.command: npm install 
      args:
        chdir: /app
+   - name: copy catalogueservice
+     ansible.builtin.copy:
+      src: catalogue.service
+      dest: /etc/yum.repos.d/catalogue.service
+   - name: sytem demon
+     ansible.builtin.systemd_services:
+      demon-reload: true
+
    - name: copy mongo repo
      ansible.builtin.copy:
       src: mongo.repo
