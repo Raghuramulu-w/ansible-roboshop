@@ -32,7 +32,7 @@
     - name: copying user.service
       ansible.builtin.copy:
        src: user.service
-       dest: /etc/systemd/system/user.service
+       dest: /etc/systemd/system
     - name: daemon-reload
       ansible.buildin.systemd_service:
        daemon_reload: true
