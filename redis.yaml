@@ -3,7 +3,8 @@
   become: yes
   tasks: 
     - name: installing from browser
-      ansible.builtin.command: dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
+      ansible.builtin.get_url
+       url: https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
     # - name: update redis
     #   ansible.builtin.command: dnf module enable redis:remi-6.2 -y
 
