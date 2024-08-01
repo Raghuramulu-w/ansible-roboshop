@@ -24,3 +24,6 @@
        src: /tmp/user.zip
        dest: /app
        remote_src: yes
+    - name: install npm
+      ansible.builtin.command: npm install
+      
