@@ -21,7 +21,7 @@
       dest: /tmp
    - name: create a directory
      ansible.builtin.file:
-      path: /usr/share/nginx/html/
+      path: /usr/share/nginx/html
       state: present
    - name: unzip
      ansible.builtin.unarcheive:
