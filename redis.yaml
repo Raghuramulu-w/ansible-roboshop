@@ -4,7 +4,7 @@
   tasks: 
     - name: installing from browser
       ansible.builtin.get_url
-       url: https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
+       url: https://rpms.remirepo.net/enterprise/remi-release-8.rpm 
     # - name: update redis
     #   ansible.builtin.command: dnf module enable redis:remi-6.2 -y
 
