@@ -15,9 +15,9 @@
        state: present
     - name: remote changes
       ansible.builtin.replace:
-      path: /etc/redis.conf
-      regexp: '127.0.0.1'
-      replace: '0.0.0.0'
+       path: /etc/redis.conf
+       regexp: '127.0.0.1'
+       replace: '0.0.0.0'
     - name: restart redis
       ansible.builtin.service:
        name: redis
