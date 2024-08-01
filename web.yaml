@@ -25,6 +25,6 @@
       state: directory
    - name: unzip
      ansible.builtin.unarchive:
-      src: /temp/web.zip
+      src: /tmp/web.zip
       dest: /usr/share/nginx/html
       remote_src: yes
