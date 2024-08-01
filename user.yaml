@@ -44,3 +44,7 @@
       ansible.builtin.package:
         name: mongodb-org-shell 
         state: present
+    - name: printing product count
+      ansible.builtin.debug:
+      register: product_count
+       msg: " product count is mon {{product_count}} > mongo --host mongodb.daws76s.fun --quiet --eval - 'db = db.getSiblingDB("user")"; db.products.count()'
