@@ -50,3 +50,12 @@
     - name: printing count of product
       ansible.builtin.debug:
        msg: " product count is {{product_count}}"
+    - name: load schema
+      ansible.builtin.command: mongo --host mongodb.daws76s.fun < /app/schema/user.js
+      when: product_count.stdout == "0"
+    - name: enable and start
+      ansible.builtin.service:
+       name: user
+       enabled: yes
+       state: restarted
+    
