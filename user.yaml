@@ -1,0 +1,17 @@
+- name: user configaration
+  hosts: user
+  become: yes
+  tasks:
+    - name: enable disable nodejs
+      ansible.builtin.shell: dnf module disable nodejs -y ; dnf module enable nodejs:18 -y
+    - name: install nodejs
+      ansible.builtin.dnf:
+       name: nodejs
+       state: present
+    - name: user adding
+      ansible.builtin.user:
+       name: roboshop
+    - name: creating directory
+      ansible.builtin.file:
+       name: /app
+       state: directory
