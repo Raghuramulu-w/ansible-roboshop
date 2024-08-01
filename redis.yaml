@@ -3,13 +3,13 @@
   become: yes
   tasks: 
     - name: installing from browser
-      ansible.builtin.get_url:
-       url: https://rpms.remirepo.net/enterprise/remi-release-8.rpm 
-       dest: remi
-    # - name: update redis
-    #   ansible.builtin.command: dnf module enable redis:remi-6.2 -y
+      ansible.builtin.dnf:
+       name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm 
+       state: present
+    - name: update redis
+      ansible.builtin.command: dnf module enable redis:remi-6.2 -y
 
-    # - name: installing redis
-    #   ansible.builtin.package:
-    #    name: redis
-    #    state: present
+    - name: installing redis
+      ansible.builtin.package:
+       name: redis
+       state: present
