@@ -1,0 +1,22 @@
+- name: cart configaration
+  hosts: cart
+  become: yes
+  tasks: 
+   - name: enable nodejs
+     ansible.builtin.shell: dnf module disable nodejs -y ; dnf module enable nodejs:18 -y
+   - name: install nodejs
+     ansible.builtin.package:
+      name: nodejs
+      state: present
+   - name: adding user
+     ansible.builtin.user:
+      name: cart
+   - name: making directory
+     ansible.builtin.file:
+      name: /app
+      state: directory
+   - name: downloading application
+     ansible.builtin.get_url:
+      url: https://roboshop-builds.s3.amazonaws.com/cart.zip
+      dest: /tmp
+      
