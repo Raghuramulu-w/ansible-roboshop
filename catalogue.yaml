@@ -15,4 +15,12 @@
      ansible.builtin.file:
       name: /app
       state: directory
-     
+   - name: install application
+     ansible.builtin.get_url:
+      url: https://roboshop-builds.s3.amazonaws.com/catalogue.zip
+      dest: /tmp
+    - name: unzip
+      ansible.builtin.archive:
+       src: /tmp/catalogue.zip
+       dest: /app
+       remote_src: yes
