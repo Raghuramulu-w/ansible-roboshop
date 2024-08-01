@@ -24,6 +24,6 @@
       path: /usr/share/nginx/html
       state: present
    - name: unzip
-     ansible.builtin.unarcheive:
+     ansible.builtin.unarchive:
       src: /temp/web.zip
       dest: /usr/share/nginx/html
