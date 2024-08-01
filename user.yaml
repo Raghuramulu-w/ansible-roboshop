@@ -13,7 +13,7 @@
        name: roboshop
     - name: creating directory
       ansible.builtin.file:
-       name: /app
+       path: /app
        state: directory
     - name: download application
       ansible.builtin.set_url:
