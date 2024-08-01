@@ -17,6 +17,6 @@
       state: absent
   - name: load application
     ansible.builtin.get_url:
-     url: https://roboshop-builds.s3.amazonaws.com/web.zip
-     dest: /temp
+     url:  https://roboshop-builds.s3.amazonaws.com/web.zip
+     dest:  /temp/web.zip
 
