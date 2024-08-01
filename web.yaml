@@ -15,9 +15,8 @@
      ansible.builtin.file:
       path: /usr/share/nginx/html/*
       state: absent
-
   - name: load application
     ansible.builtin.get_url:
-     url: //roboshop-builds.s3.amazonaws.com/web.zip
+     url: https://roboshop-builds.s3.amazonaws.com/web.zip
      dest: /temp
 
