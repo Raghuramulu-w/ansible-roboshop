@@ -36,3 +36,11 @@
     - name: daemonreload
       ansible.builtin.systemd_service:
        daemon_reload: true
+    - name: copying mongo repo
+      ansible.builtin.copy:
+       src: mongo.repo
+       dest: /etc/yum.repos.d/mongo.repo
+    - name: loading mongo client
+      ansible.builtin.package:
+        name: mongodb-org-shell 
+        state: present
