@@ -22,7 +22,7 @@
    - name: create a directory
      ansible.builtin.file:
       path: /usr/share/nginx/html
-      state: present
+      state: directory
    - name: unzip
      ansible.builtin.unarchive:
       src: /temp/web.zip
