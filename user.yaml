@@ -23,3 +23,4 @@
       ansible.builtin.unarchive:
        src: /tmp/user.zip
        dest: /app
+       remote_src: yes
