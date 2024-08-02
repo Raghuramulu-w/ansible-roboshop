@@ -8,9 +8,9 @@
      ansible.builtin.package:
       name: nodejs
       state: present
-   - name: adding user
+   - name: adding  roboshop user
      ansible.builtin.user:
-      name: cart
+      name: roboshop
    - name: making directory
      ansible.builtin.file:
       name: /app
