@@ -1,0 +1,34 @@
+- name: shipping configaration
+  hosts: shipping
+  become: yes
+  tasks:
+    - name: install maven
+      ansible.builtin.dnf:
+       name: maven
+       state: present
+    - name: adding user roboshop
+      ansible.builtin.user:
+       name: roboshop
+    - name: directory
+      ansible.builtin.file:
+       name: /app
+       state: directory
+    - name: maven clean
+      ansible.builtin.command: mvn clean package
+      ansible.builtin.command: mv target/shipping-1.0.jar shipping.jar
+    - name: setting up service
+      ansible.builtin.copy:
+       src: shipping.service
+       dest: /etc/systemd/system/shipping.service
+    - name: daemon-reload
+      ansible.builtin.systemd_service:
+       daemon_reload: true
+    - name: start and enable
+      ansible.builtin.service:
+        name: shipping
+        enabled: yes
+        state: started
+    - name: install my sql
+      ansible.builtin.package:
+       name: mysql
+       state: present
