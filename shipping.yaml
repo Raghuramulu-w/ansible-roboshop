@@ -13,7 +13,7 @@
       ansible.builtin.file:
        name: /app
        state: directory
-    - name: maven clean
+    - name: mavenclean
       ansible.builtin.command: mvn clean package
       ansible.builtin.command: mv target/shipping-1.0.jar shipping.jar
     - name: setting up service
