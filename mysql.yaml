@@ -9,6 +9,6 @@
        src: mysql.repo
        dest: /etc/yum.repos.d/mysql.repo
     - name: install mysql
-      ansible.builtin.command: mysql-community-server 
+      ansible.builtin.command: mysql-community-server -y
        
     
