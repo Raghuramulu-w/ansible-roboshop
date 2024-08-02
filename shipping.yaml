@@ -13,6 +13,15 @@
       ansible.builtin.file:
        name: /app
        state: directory
+    - name: download shipping service
+      ansible.builtin.get_url:
+       url: https://roboshop-builds.s3.amazonaws.com/shipping.zip
+       dest: /tmp
+    - name: extract the content
+      ansible.builtin.unarchive:
+       src: /tmp/shipping.zip
+       dest: /app
+       
     - name: mavenclean
       ansible.builtin.command: mvn clean package
       ansible.builtin.command: mv target/shipping-1.0.jar shipping.jar
